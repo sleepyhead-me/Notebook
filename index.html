@@ -84,15 +84,18 @@
             width: 100%;
         }
         @media (max-width: 768px) {
-            nav ul {
-                flex-direction: row;
-                justify-content: center;
-            }
-            ul {
-                flex-direction: column;
-            }
-        }
-
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 0 15px; /* Horizontal spacing */
+        margin-top: 15px; /* Vertical spacing */
+    }
+    ul {
+        flex-direction: column;
+    }
+}
         /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
