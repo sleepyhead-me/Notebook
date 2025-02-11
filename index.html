@@ -1,56 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Resource Hub</title>
-  <link rel="stylesheet" href="css/styles.css">
-    <script defer src="script.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notebook</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
+    <!-- Header & Navigation -->
     <header>
-        <h1>College Resource Hub</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#notes">Notes</a></li>
-                <li><a href="#routine">Class Routine</a></li>
-                <li><a href="#papers">Previous Papers</a></li>
-                <li><a href="#syllabus">Syllabus</a></li>
-                <li><a href="#resources">Other Resources</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-            <div class="search-container">
-                <input type="text" id="globalSearch" placeholder="Search...">
-                <button onclick="performGlobalSearch()">🔍</button>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Notebook</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#notes">Subject-wise Notes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#routine">Class Routine</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#papers">Previous Year's Question Papers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#syllabus">Syllabus</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#resources">Other Resources</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
-    
-    <section id="notes">
-        <h2>Subject-wise Notes</h2>
-        <ul>
-            <li><a href="notes/calculus.html">Calculus I</a></li>
-            <li><a href="notes/linear-algebra.html">Linear Algebra</a></li>
-            <li><a href="notes/vector-geometry.html">Analytic and Vector Geometry</a></li>
-            <li><a href="notes/physics1.html">Non-major Physics I</a></li>
-            <li><a href="notes/physics2.html">Non-major Physics II</a></li>
-        </ul>
+
+    <!-- Home Page -->
+    <section id="home">
+        <div class="container">
+            <h1>Welcome to Notebook</h1>
+            <p>Your one-stop resource for all academic materials.</p>
+        </div>
     </section>
-    
-    <section id="papers">
-        <h2>Previous Year’s Question Papers</h2>
-        <ul>
-            <li><a href="questions/calculus.html">Calculus I</a></li>
-            <li><a href="questions/linear-algebra.html">Linear Algebra</a></li>
-            <li><a href="questions/vector-geometry.html">Analytic and Vector Geometry</a></li>
-            <li><a href="questions/physics1.html">Non-major Physics I</a></li>
-            <li><a href="questions/physics2.html">Non-major Physics II</a></li>
-        </ul>
+
+    <!-- Subject-wise Notes Section -->
+    <section id="notes" class="mb-5">
+        <div class="container">
+            <h2>Subject-wise Notes</h2>
+            <p>Click on a subject to view chapter-wise notes:</p>
+            <ul>
+                <li><a href="#">Fundamentals of Mathematics</a></li>
+                <li><a href="#">Calculus I</a></li>
+                <li><a href="#">Linear Algebra</a></li>
+                <li><a href="#">Analytic and Vector Geometry</a></li>
+                <li><a href="#">Non-major Physics I</a></li>
+                <li><a href="#">Non-major Physics II</a></li>
+            </ul>
+        </div>
     </section>
-    
+
+    <!-- Class Routine Section -->
+    <section id="routine" class="mb-5">
+        <div class="container">
+            <h2>Class Routine</h2>
+            <p>View or download your class timetable here.</p>
+            <!-- Example of a Class Routine Table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Subject</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>Calculus I</td>
+                        <td>10:00 AM - 12:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>Linear Algebra</td>
+                        <td>12:00 PM - 2:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>Fundamentals of Mathematics</td>
+                        <td>9:00 AM - 11:00 AM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Previous Year’s Question Papers Section -->
+    <section id="papers" class="mb-5">
+        <div class="container">
+            <h2>Previous Year’s Question Papers</h2>
+            <p>Access past year question papers categorized by subject:</p>
+            <ul>
+                <li><a href="#">Fundamentals of Mathematics</a></li>
+                <li><a href="#">Calculus I</a></li>
+                <li><a href="#">Linear Algebra</a></li>
+                <li><a href="#">Analytic and Vector Geometry</a></li>
+                <li><a href="#">Non-major Physics I</a></li>
+                <li><a href="#">Non-major Physics II</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Syllabus Section -->
+    <section id="syllabus" class="mb-5">
+        <div class="container">
+            <h2>Syllabus</h2>
+            <p>Click to view the syllabus for each subject:</p>
+            <ul>
+                <li><a href="#">Fundamentals of Mathematics</a></li>
+                <li><a href="#">Calculus I</a></li>
+                <li><a href="#">Linear Algebra</a></li>
+                <li><a href="#">Analytic and Vector Geometry</a></li>
+                <li><a href="#">Non-major Physics I</a></li>
+                <li><a href="#">Non-major Physics II</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Other Resources Section -->
+    <section id="resources" class="mb-5">
+        <div class="container">
+            <h2>Other Resources</h2>
+            <p>Additional study materials and important links:</p>
+            <ul>
+                <li><a href="#">Study Material 1</a></li>
+                <li><a href="#">Important Links</a></li>
+                <li><a href="#">Further Readings</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="mb-5">
+        <div class="container">
+            <h2>About</h2>
+            <p>This website is designed to make academic resources easily accessible for students. Here, you can find notes, question papers, syllabi, and more.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 College Resource Hub. All rights reserved.</p>
+        <p>&copy; 2025 Notebook. All rights reserved.</p>
     </footer>
+
+    <!-- Add Bootstrap JS (for the navbar toggle) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
