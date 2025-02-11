@@ -1,17 +1,39 @@
-// JavaScript to handle smooth scrolling for the navigation links
+// Fade-in effect on scroll
 document.addEventListener('DOMContentLoaded', function () {
-    const links = document.querySelectorAll('a[href^="#"]');
-
-    links.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            
-            window.scrollTo({
-                top: targetSection.offsetTop - 60,
-                behavior: 'smooth'
-            });
+    const elements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
         });
+    }, { threshold: 0.1 });
+
+    elements.forEach(element => {
+        observer.observe(element);
+    });
+});
+
+// Toggle Hamburger Menu
+const hamburgerMenu = document.getElementById('hamburger-menu');
+const navbarNav = document.querySelector('.navbar-nav');
+
+hamburgerMenu.addEventListener('click', () => {
+    navbarNav.classList.toggle('show');
+});
+
+// Smooth Scroll
+document.querySelectorAll('.navbar-nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// Accordion functionality for syllabus
+document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const body = header.nextElementSibling;
+        body.style.display = body.style.display === 'block' ? 'none' : 'block';
     });
 });
