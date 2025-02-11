@@ -3,125 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Notebook</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>College Resource Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            position: relative;
+            z-index: 1000;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+        nav ul li a:hover {
+            color: #00aaff;
+        }
+        section {
+            padding: 80px 20px;
+            text-align: center;
+            transition: opacity 0.5s ease-in-out;
+        }
+        h2 {
+            font-weight: 700;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        ul li {
+            background: #fff;
+            padding: 15px;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        ul li:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            ul {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Loading Animation -->
-    <div id="loader">
-        <div class="spinner"></div>
-    </div>
-
-    <!-- Navbar -->
     <header>
-        <nav class="navbar">
-            <div class="navbar-brand">Notebook</div>
-            <ul class="navbar-nav">
+        <h1>College Resource Hub</h1>
+        <nav>
+            <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#notes">Subject-wise Notes</a></li>
+                <li><a href="#notes">Notes</a></li>
                 <li><a href="#routine">Class Routine</a></li>
-                <li><a href="#papers">Previous Year’s Question Papers</a></li>
+                <li><a href="#papers">Previous Papers</a></li>
                 <li><a href="#syllabus">Syllabus</a></li>
                 <li><a href="#resources">Other Resources</a></li>
                 <li><a href="#about">About</a></li>
             </ul>
-            <div class="hamburger-menu" id="hamburger-menu">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
         </nav>
     </header>
-
-    <!-- Home Section -->
+    
     <section id="home">
-        <h1>Welcome to Notebook</h1>
-        <p>Your one-stop academic resource hub for all subjects!</p>
+        <h2>Welcome to the College Resource Hub</h2>
+        <p>Your one-stop destination for academic resources, past papers, and study materials.</p>
     </section>
-
-    <!-- Subject-wise Notes Section -->
+    
     <section id="notes">
         <h2>Subject-wise Notes</h2>
-        <ul>
-            <li><a href="#">Fundamentals of Mathematics</a></li>
-            <li><a href="#">Calculus I</a></li>
-            <li><a href="#">Linear Algebra</a></li>
-            <li><a href="#">Analytic and Vector Geometry</a></li>
-            <li><a href="#">Non-major Physics I</a></li>
-            <li><a href="#">Non-major Physics II</a></li>
+        <input type="text" id="searchNotes" placeholder="Search notes..." onkeyup="searchFunction('searchNotes', 'notesList')">
+        <ul id="notesList">
+            <li>Fundamentals of Mathematics</li>
+            <li>Calculus I</li>
+            <li>Linear Algebra</li>
+            <li>Analytic and Vector Geometry</li>
+            <li>Non-major Physics I</li>
+            <li>Non-major Physics II</li>
         </ul>
     </section>
-
-    <!-- Class Routine Section -->
+    
     <section id="routine">
         <h2>Class Routine</h2>
-        <table>
-            <tr>
-                <th>Day</th>
-                <th>Subject</th>
-                <th>Time</th>
-            </tr>
-            <tr>
-                <td>Monday</td>
-                <td>Fundamentals of Mathematics</td>
-                <td>9:00 AM - 10:30 AM</td>
-            </tr>
-            <tr>
-                <td>Tuesday</td>
-                <td>Calculus I</td>
-                <td>10:45 AM - 12:15 PM</td>
-            </tr>
-        </table>
+        <p>View or download the class timetable for your semester.</p>
     </section>
-
-    <!-- Previous Year’s Question Papers Section -->
+    
     <section id="papers">
         <h2>Previous Year’s Question Papers</h2>
-        <ul>
-            <li><a href="#">Fundamentals of Mathematics - 2024</a></li>
-            <li><a href="#">Calculus I - 2023</a></li>
-            <li><a href="#">Linear Algebra - 2022</a></li>
+        <input type="text" id="searchPapers" placeholder="Search question papers..." onkeyup="searchFunction('searchPapers', 'papersList')">
+        <ul id="papersList">
+            <li>Fundamentals of Mathematics - 2023</li>
+            <li>Calculus I - 2022</li>
+            <li>Linear Algebra - 2021</li>
+            <li>Analytic and Vector Geometry - 2020</li>
+            <li>Non-major Physics I - 2019</li>
+            <li>Non-major Physics II - 2018</li>
         </ul>
     </section>
-
-    <!-- Syllabus Section -->
+    
     <section id="syllabus">
         <h2>Syllabus</h2>
-        <div class="accordion">
-            <div class="accordion-item">
-                <div class="accordion-header">Fundamentals of Mathematics</div>
-                <div class="accordion-body">Syllabus details here...</div>
-            </div>
-            <div class="accordion-item">
-                <div class="accordion-header">Calculus I</div>
-                <div class="accordion-body">Syllabus details here...</div>
-            </div>
-        </div>
+        <p>Check out the detailed syllabus for each subject and semester.</p>
     </section>
-
-    <!-- Other Resources Section -->
+    
     <section id="resources">
         <h2>Other Resources</h2>
-        <ul>
-            <li><a href="#">Study Materials</a></li>
-            <li><a href="#">Important Links</a></li>
-        </ul>
+        <p>Additional study materials, useful links, and further readings.</p>
     </section>
-
-    <!-- About Section -->
+    
     <section id="about">
         <h2>About</h2>
-        <p>This website is created to help students with easy access to academic resources, notes, syllabus, and much more.</p>
+        <p>Learn more about our mission and the team behind this resource hub.</p>
     </section>
-
-    <!-- Footer -->
+    
     <footer>
-        <p>&copy; 2025 Notebook. All Rights Reserved.</p>
+        <p>&copy; 2025 College Resource Hub. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script>
+        function searchFunction(inputId, listId) {
+            let input = document.getElementById(inputId).value.toLowerCase();
+            let list = document.getElementById(listId).getElementsByTagName('li');
+            for (let i = 0; i < list.length; i++) {
+                let item = list[i].textContent.toLowerCase();
+                list[i].style.display = item.includes(input) ? "" : "none";
+            }
+        }
+    </script>
 </body>
 </html>
